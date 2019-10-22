@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="default_text_size">8sp</dimen>
+    <dimen name="default_counter_text_size">24sp</dimen>
+</resources>
