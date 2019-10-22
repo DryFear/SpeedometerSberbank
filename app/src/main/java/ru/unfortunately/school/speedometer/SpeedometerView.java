@@ -38,7 +38,7 @@ public class SpeedometerView extends View {
     private final int COUNTER_FRAGMENTS_COUNT = 11;
 
     private int mLowMediumBorder;
-    private int mMediumHightBorder;
+    private int mMediumHighBorder;
 
     private int mLowSpeedColor;
     private int mMediumSpeedColor;
@@ -139,7 +139,7 @@ public class SpeedometerView extends View {
 
     private void drawCircle(Canvas canvas) {
         int lowMediumBorderInDegrees = (int) ((float)(mLowMediumBorder) * (END_ANGLE - START_ANGLE) / mMaxSpeed);
-        int mediumHighBorderInDegrees = (int) ((float) (mMediumHightBorder) * (END_ANGLE - START_ANGLE) / mMaxSpeed);
+        int mediumHighBorderInDegrees = (int) ((float) (mMediumHighBorder) * (END_ANGLE - START_ANGLE) / mMaxSpeed);
 
         mGraphicsPaint.setStrokeWidth(BACKGROUND_STROKE_SIZE);
         mGraphicsPaint.setColor(BACKGROUND_COLOR);
@@ -172,7 +172,7 @@ public class SpeedometerView extends View {
             mCurrentSpeed = typedArray.getInt(R.styleable.SpeedometerView_speed, START_SPEED);
             mMaxSpeed = typedArray.getInt(R.styleable.SpeedometerView_max_speed, DEFAULT_MAX_SPEED);
             mLowMediumBorder = typedArray.getInt(R.styleable.SpeedometerView_low_medium_border, START_SPEED);
-            mMediumHightBorder = typedArray.getInt(R.styleable.SpeedometerView_medium_high_border, mMaxSpeed);
+            mMediumHighBorder = typedArray.getInt(R.styleable.SpeedometerView_medium_high_border, mMaxSpeed);
             mArrowColor = typedArray.getColor(R.styleable.SpeedometerView_arrow_color, DEFAULT_ARROW_COLOR);
             mLowSpeedColor = typedArray.getColor(R.styleable.SpeedometerView_low_speed_color, DEFAULT_LOW_SPEED_COLOR);
             mMediumSpeedColor = typedArray.getColor(R.styleable.SpeedometerView_medium_speed_color, DEFAULT_MEDIUM_SPEED_COLOR);
@@ -200,5 +200,69 @@ public class SpeedometerView extends View {
 
     public int getSpeed(){
         return mCurrentSpeed;
+    }
+
+    public int getLowMediumBorder() {
+        return mLowMediumBorder;
+    }
+
+    public void setLowMediumBorder(int lowMediumBorder) {
+        mLowMediumBorder = lowMediumBorder;
+    }
+
+    public int getMediumHighBorder() {
+        return mMediumHighBorder;
+    }
+
+    public void setMediumHighBorder(int mediumHighBorder) {
+        mMediumHighBorder = mediumHighBorder;
+    }
+
+    public int getLowSpeedColor() {
+        return mLowSpeedColor;
+    }
+
+    public void setLowSpeedColor(int lowSpeedColor) {
+        mLowSpeedColor = lowSpeedColor;
+    }
+
+    public int getMediumSpeedColor() {
+        return mMediumSpeedColor;
+    }
+
+    public void setMediumSpeedColor(int mediumSpeedColor) {
+        mMediumSpeedColor = mediumSpeedColor;
+    }
+
+    public int getHighSpeedColor() {
+        return mHighSpeedColor;
+    }
+
+    public void setHighSpeedColor(int highSpeedColor) {
+        mHighSpeedColor = highSpeedColor;
+    }
+
+    public int getArrowColor() {
+        return mArrowColor;
+    }
+
+    public void setArrowColor(int arrowColor) {
+        mArrowColor = arrowColor;
+    }
+
+    public int getCurrentSpeed() {
+        return mCurrentSpeed;
+    }
+
+    public void setCurrentSpeed(int currentSpeed) {
+        mCurrentSpeed = currentSpeed;
+    }
+
+    public int getMaxSpeed() {
+        return mMaxSpeed;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        mMaxSpeed = maxSpeed;
     }
 }
